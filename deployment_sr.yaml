@@ -20,7 +20,7 @@ spec:
       containers:
         - name: recomendador
           image: jorgerap1997/sistema_recomendador:latest
-          command: ["/bin/sh", "-c", "sleep 40 && python app.py"]
+          command: ["/bin/sh", "-c", "sleep 40 && python app/app.py"]
           args:
             - --bind_ip
             - 0.0.0.0
