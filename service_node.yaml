@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sistema_recomendador
+  labels:
+    app.kubernetes.io/name: sistema_recomendador
+    app.kubernetes.io/component: backend
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 4000
+    targetPort: 4000
+  selector:
+    app.kubernetes.io/name: sistema_recomendador
+    app.kubernetes.io/component: backend

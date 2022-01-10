@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sistema_recomendador
+  labels:
+    app.kubernetes.io/name: sistema_recomendador
+    app.kubernetes.io/component: backend
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: sistema_recomendador
+      app.kubernetes.io/component: backend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: sistema_recomendador
+        app.kubernetes.io/component: backend
+    spec:
+      containers:
+        - name: sistema_recomendador
+          image: jorgerap1997/sistema_recomendador:latest
+          command: ["/bin/sh", "-c", "sleep 40 && npm run start"]
+          args:
+            - --bind_ip
+            - 0.0.0.0
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+          ports:
+            - containerPort: 4000
