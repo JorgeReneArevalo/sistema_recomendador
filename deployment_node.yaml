@@ -20,7 +20,7 @@ spec:
       containers:
         - name: sistema_recomendador
           image: jorgerap1997/sistema_recomendador:latest
-          command: ["/bin/sh", "-c", "sleep 40 && npm run start"]
+          command: ["/bin/sh", "-c", "sleep 40 && python app.py"]
           args:
             - --bind_ip
             - 0.0.0.0
