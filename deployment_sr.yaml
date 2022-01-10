@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sistema_recomendador
+  name: recomendador
   labels:
-    app.kubernetes.io/name: sistema_recomendador
+    app.kubernetes.io/name: recomendador
     app.kubernetes.io/component: backend
 spec:
   selector:
     matchLabels:
-      app.kubernetes.io/name: sistema_recomendador
+      app.kubernetes.io/name: recomendador
       app.kubernetes.io/component: backend
   replicas: 1
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: sistema_recomendador
+        app.kubernetes.io/name: recomendador
         app.kubernetes.io/component: backend
     spec:
       containers:
-        - name: sistema_recomendador
+        - name: recomendador
           image: jorgerap1997/sistema_recomendador:latest
           command: ["/bin/sh", "-c", "sleep 40 && python app.py"]
           args:
