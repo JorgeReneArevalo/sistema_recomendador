@@ -6,8 +6,8 @@ metadata:
     app.kubernetes.io/name: recomendador
     app.kubernetes.io/component: backend
 spec:
-  type: ClusterIP
-  # type: LoadBalancer
+  # type: ClusterIP
+  type: LoadBalancer
   ports:
   - port: 4000
     targetPort: 4000
